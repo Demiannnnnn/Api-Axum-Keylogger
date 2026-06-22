@@ -1,0 +1,39 @@
+dsadasd demian
+msadasdjsadjsad una  nashe
+a 1234567890'<¿>|<¿><¿><¿><¿>|	|				|			caua l sera la compekjidad de detectar todo el coteclado? tambien no quiero codigo sino utilidad, complejidad y 		uso. Me refiero a que esta bien pero por ejemplo no detectta teclas especiasles como fn, poptinoon, 	dsaddas	delete aparece raro, etc, tu me entiendes, crees que sea buen plan?? porque aunque le dara mas complejidavalor  al mismo tiempo hara menks <¿>ps los legiible
+	!"					<°> 			CREcres es que igual no es necesario? me refiero a que tengo esteste es el proroyecto, muchas de las cocsas que hago uya ya sobn mas de lo solicitado, refiriendome a que no no necesito por ejemplo parsear ni hacer una api, con un simplem s server sobra, meti mas estructura de la necesari. a. Que opiannas?
+			ac	ya, empezemos por el envio perdiotdico, este es mi codigo de stage 22 api, si necesitas mas apartados, me dices, haz un teque se envie cada cierto tiempo. pUHaz una variables const al inicio del codigo para sque sea facil de cambiar
+
+v
+	av		zzzzza		av		av		av//EsStruct 	que hace serde en rust
+	
+//Me		gasgQq@
+	git
+	qqquta
+21331907		Arc en rsust
+		clear
+clscd haDes		Re		G	
+codocker up -d
+doc
+loca		
+	
+,lsls
+docker
+code .
+ac.env
+v	
+
+
+
+aaaa@gmail.comloca/admi
+admin@gmutalcadev.com-		vir
+	clear
+	aaaac	la persistencia no esta completadamente implementado. Necesito que me implementes para windows, linux, y macos. EQuiero ahcerhacer iuna una alta persistencia pero no volverme loco, asi que lo queiero es que al iinstalarse el stage 2o eus qeycuue cuandos  se llame a la ael staege 11,  llame al stage2 , se descagrgue y lo ejecute , el stage 22 creara ara dos copias mass alamemacenados en lugares aleatoridel sistema, suponte que podrian haber 10 ruo 15 rutas distintas, esesta sas rutas e. El espyware esta ra en la rruta en donde debe ede estar para que tenga persistencia, luego  y en ote2 copasias en otras 2 rutas os 2 lugares, las cuales seran aleatoriosas, . eLeL El mas Cuando se borre una de estas copias, las otras dos rlrestableceran a la cborra, da, o sea solo re recse recrearan y podran aparecer siempre en rutas aleatorios as distintas,  ten en consideracion que igual siempre debe se debe rde restablecer la cpopia que esta en la carpeta que le da alta persistpersistencia, por ejemplo	carpeta pde windows paque da persistencia
+
+
+v
+			persistence				mod.rs
+widnndows.rs
+linux.rs
+		Avamcence eModificacApi fgegenera .txt y sparsedo2 .txt, uno de log y otro lo parsea, avance en persistencioaa
+cInicializate struct axumcv

