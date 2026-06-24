@@ -2,7 +2,6 @@
 use std::sync::{Arc, Mutex};
 use std::fs::{OpenOptions, create_dir_all};
 use std::io::Write;
-use std::collections::HashMap;
 
 #[derive(Clone)]
 pub struct Storage {

