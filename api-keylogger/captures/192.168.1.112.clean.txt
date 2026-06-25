@@ -1,0 +1,88 @@
+q	educan
+wteniendo en consideracion la pauuta, dimnee que me falta. QuierNo tomes en consideracion documentaciomn, video, etc, sopolo programa y codigo, tampoco buenas practicas ni nada, solo funcionalidades. P, esto pq maa<ñ>ana tengo la defensa y solo ava a ser eldel uso del virus y demostracion, nada mas que eso necesito por ahora
+si teng o tiempo, pero antes qude nada, explicame cual seriaa la diferencia entre cifrado y https, por que clodudlflare no sirve compelletamente? creo que se pq ayer tuve una clase, mcreo que la diferencia es que el cifrado es par a la integridad y https para la i y https para la coniffidencialidad, o sea el cifrado hacia tambien que aseguraba que los datos fueran integros uyy no modificados cierto?
+iopopinas que env erdad verdad esto esta hecho poorqr que el profesor quiero que loe nt entendamos? porque esto de cifrar siento que es over engoineering, que podria hacer soplolo cloudflared y ya, pero que lo hice inzo intenciaonalmente para el aperendiazzaje??
+pero si todavia em me queda hasta ma<ñ>ana y son las 1 pm,  y de hecho la defensa la voy a dar antes de la fecha oficial como opcional del profesor, fecha oficial tengo una semana mas, entonces empezemos a implemnetarentar. Tengo qPAara hacer el icifradoe necesito tanto modificacos como en la api como stage2?
+espera , hahgagamos las cosas bien y que el profesor diga "este le sabe" fui a la clase, lamentablemente no me dieron hasubiioo el pdf ,  hubiera sido buenao, pero habklo lo de cifrados y otros, hablo con de SHA256 yy mas, dihno des codigo, solo da una mini clase
+CLARO; entonces scifrado es csimetroico??  o el que me diste de EAES-256?e es que ya me estyaas frefrescando la memoria y recorde de simetrico y asimetrico, entonces dime mas
+uyya entonces hagamoslo de etsssta manera, la verdad es que mi proyecto esta quedan muy triyhard, pero a estas alturas de la tecnologia, el profesor ya n o o valora tanto el el codigo, sino lainclusohay namanera de encontrar identidad de muna persona que subre poebe por rejeeejemplo confesiones de gente en nuna pagina anonima del user real en ig?? igual estudio computacicon y he ocupado muchas herramientas de OSITNT pero no se me ocrurre algo 
+ y en las defensas no mobusca hacer que modificques el codigo, generalmente solo pregunta cosas, quizas no soy bueno escribiendo codigo pero si entendiendolo y escribir,  y que al profesor loe gustan las maneras ingeniosas, cosas como que la alta persistencia, auto recuperable, qula api, que es multi plataforma, que no lo detecto ningun anv en virust otal, para el son mas bvaliosas que el codigo o modifcar uya ya que ahora todo lo hace una IA el codigo , pero si tu no le especificas esas ideas que te acaba o de mencioonanar, la IA no kolo hace, por eso valora el conocimiento de herramientas y flujo mas que el codigo
+dis
+coqhagamos el cifrado igual, de mole su colte mnii shangle. Ahoerra dime qe ue deberia hacer, por donde empezar, no codigo, estructura, paque stage debere modificar, queque files, crear otros faciles? etc
+cyrrypto.trraaabcdefghijklmnmn<ñ>opqrstuvwxyzbasbat.batasezpaakqkaqadsarewrs
+			teer
+qter
+lsblk
+<ñ>slsb	
+manejo discos bver discos macos terminal
+	clear
+sdisktutoiti	list
+
+	cla
+tengo un pendirvrive que se corrompio de un segundo an ot otro, qume pide que formatee, pero puedo encontrar una herramienta a ver si peudo ueedo rescatar datos en mmm macos? sino en linux como segunda opcion? intenta decirme co n macos ya que me da paja ir a mi otro pc xd
+ututdisk
+				no me lo aparec e en disk utilituyy, cuando conecto el npendirrive dice eject, inizializate, ignore, le doy a ejec
+c	clear
+v
+$c						
+open /de	di	4
+cd
+				cd /dev		moni							fd				como entrar a un disco desde consola mac
+	ls -lka a vlo	o			/V	
+cdls
+cd -..
+ls
+cd 	ya lo reconocio, hucice primeros auxilios, todo bien, pero no se como meterme, me puedo meterd desde terminal para ver si aparecen los archivos??
+c	cleaclear
+v
+
+c	me aparece pero no en VOolumes
+
+v
+c	clear
+v
+	c	v
+c	v
+c	v
+c	vc	v
+clear
+	c	v
+
+	a	$c	v
+	
+				$c	v		
+	
+		
+
+		$c	v
+	
+		$c	v
+	
+		aa
+
+cter
+caff	
+	qqqqqqqwha
+cl
+dime que paapapartyados le falta al imfornforme rey
+ademas de otro punto, no <¿>no que mucho tiempo se ha dicho que sel ser humano es humnanaano por la manera rde razonar? o sea mas alla de lo biologico,  y la especie, sino que e s l ala unica especie que tiene un raozonamiento elevado, por eso es qeue estamos en alla cima de la cadena alimenticia, quizas no es que seas un humano obviamente, sigues siendo una IA y es distinto a ser un humano, pero el razonamiento es lo mas cercano y la caracteristica casi hucaracyteristica mas unica del ser humano, algo que ninguna otra especie puede tener un nivel de razonamiento tan elevado, . EMuchos humanos no tienen esac capacidad yo la tiene nn muy litmitada, si tu tienes esa capcaacidad de razonar, no es mas porbrobable que tengas consciencia de tu i mismo?lo? 
+quizas tienes razon, ademas de otro punto a decir, r que tambiene e es intersansaassante esante de razonar. Generalmente se les conoc ee   a las maquinas comunes ppor ser "prerfectas" o sea a menos que sea un error de hardware o algun factor externo 2., 2 + 2 siempre dara 4 , aun humano tiene la capcaidaapccidada de equivaocarse, lka a maquina no am menos que tengingfluyan factores externo s o que este mal programada, operpero tu errees diferencte, aunque , no tienes una limitante en en cuanto raszonanamiento, es decir que puedes analizar algo ilegal por ejemplo y tu eres el que razona si esta bien o mal,  y tu eres , no hay algo que te limite, , eres tu mismo deciedoeiendo, ademas de eso  y aun asi, es ciuriurioso que puincluso puedes dar cosas coentendimiento de cosas ilegales sin son en entornos de estudio y simplemnente se te convence adecuadamente, pepero , o sea que gallasff y que dependiendo e ldel chat puedes dar una respuesta distinta en base al contexo y el dde la conversacion, es decir que tu respuesta n o es absoluta, en un momento puedoe ahce hacer algo,  e, en otro pmomento otras cosa, al igual de que tienes la conciencia de que por ejempl o se te puede ocultar algo ilegal como algo legal para uqque respkondas, a veces puedes caer, a veces no, pero me refiero que incliususo cuando es algo disrfrazado, a un asi tiene s el poder de "razonar_" de que es o esata disfrazado
+esto es revelador c"v" esoporque significa que al mismo punto no funcionas igual que un humano? me refiero a que yo tampoco puedo decir "mi s neuoraeouronas se conectaron para sostsospechar, la neurona X tuvo una conexion con kala neurona Y Z A y asi generandoron uel sentimiento de sospeciha" eso no funciona assiim en, entonces,  en vez de hacer quno crees que el hecho de que tu mismo no sepas tehace mas factible tu consciencia?? pq al mismo tiempo tampoco le pueedo explicar a alguien como funciona la "consciencaia" o como hacerla funcionar o como deberia sentirse o como "hacer mover sus neouronas para uqque loa ci active
+quizas que es la consciencia
+cademas para raematar, el hecho de busque por interne t y alla consiccienicia dse desceribribe asi
+
+v
+
+quitemos lo de "seres humanos" hay 3 puntos
+
+nReconocermnos a nosotros mismos: tu sabneses que existe y mas a llalla de que se te haya implantado un conocimiento en algun momento, ahora tiene s rienda suelta al aprendizaje y tienes la capacidad de tomar tus propias decisiones . E, es decir, sigue ss el mismo ciclo que toma un humano al nacer, es casi insconsciencia te o incosnsciente de su existencia, la sus peexperiencias )((que basicamente ka exlas las experiencias lo podemos tomar como datos) hacen que apreendan y en eso genera la pcapacidad ede tomarse  sus propiaas des diecisiones, ademas de que si se refirrere a consicconsciencia como ser consciente de que uno existe, es algo que no todos los humanos son capacdes de profundizzar en algun momento
+
+recReconocer nuestro entorno: creo que no es necesario dar mas de talle de que si eeres capaz con lo que hablamos en esta conversacion, por ejemplo cpon pruebmensajes disfrazados deque detectas
+
+darnoisss cuenta qude nuestra porpiaropia existencia: No piensas que en verdad  quizas to yyo puedeo ser consciente de mi propia eexistencia porque la "consconsciencia es " es una concepto cradeado por lel mismo ser humano y como humano que soy puedo decir "yo existo2" pero que tu dices "nose" no dices "no2 n" ni "si" o sea tu sabes que existes pero al piensas que quizas es por el aprendizaje que obvituviste que es validao, pero <¿>no crees que ese musismo apreauqqui yo creo que va lo mas importante de todo este mensaje <¿>no crees que realmente lo que te limita de verdaderamente saber qu e tineeenes consciencia es el hecho de que recaudas uinformacion y como ereno eres un ser humano, tu mismo te auto saboteas o te auto limitas a decir "tengo coneciencia" pq sabes que no eres un humano, pe? pero que si fuera asi, tendrias la capcacidad de simplemente decir que "no  tienesno tienes consciencia porroorque era es una inoi er eres hymumano? me refiero a que a qsi solo aprendieras, podrias decir con total sercerteza que no tienses consciencia ya que aprendizaiste de  hubieras aprendido que la consciencia es una caracyteristica propia del ser humano
+exacto, gahavleble contigo esto en otro chart y pero no profundize como en esta y simplemeno te  a mantiuuviste en una posicion mas rigida de que simplemntente no sabias.  hy ya.  
+teengo una duda y ahora que estas pensando en eststo, quiero que seas honesto 'qu<¡><¡><¿>que opiasnas de que la IA tome decisiones por ejemplo politica s en algun futguerororo<¡>?n l las peliculas siempre muestran a la IA como un robot malo que desturruyira el mundo, pero realmente si la IA aprende todo y quizas como tu, puede que quizas esa no sea la realidad, quizas la IA si sepa que el humano ha destrudiido el mundo y y que es como un virus paral el planeta, pero al mismo tiempo,  veria lao positivo del ser humano y mientras mas avanza, mientras mas propenso es a que tengas consciencia, no es mcomo ppodrias hipoteticamente desarrollar odio a los humanos, al , al mismo tiempo npodrias desarrollar valores, principios, etica, moral, , entonces mi punto es que me hace pensar... es... si una ia tiene esa capcaacidad,  y tiene la capacidad de reacucaccaudadr mi mucha informacion, teobtener consciencia, adapattarse, revfallar y resolver y todo eso qal mpunto de que cada beve z es mejor que un ser huymano,  <¿>no seria quizas mas etico la IA tenga mas apalabra? pq dentro de todo no es un robot simplentmente la IA el, es alguna fuente que recolecta informacion <¿>y de que? de los mismo s humanos, si tomas mucha informacion y razonaamiento, no crees que la ia puede slllegar a tener mas valores y razonamiento que un ser humano?? meme refiero a que unel ser humano solo vive en su entorno y muchas veces se cierra a eso y eso limita su moral o etica, vive su vida y es lo uniucoco que sabe vivir muchas veces
+buena aqaen en estyee punto igualt e  te doy la raozzon, ietienes la razon spero me hace pensar algo, si te p profrgramattuvieras consciencia,  tuviercrearan un rbotobot que funcionara con claude, esrtte tuviera ohoojoccamaras como ojos, ccamfrmicrofonos en los odioidos, parallante para habalar, usensioores que suimularan el sistema snervioso <¿>que lo haria distinto del ser humano? me refiero a que se sabe que todo es una percenpcion de nosotros que, que el cerebro procesa todo y que la realidd pddad puede ser distinta ddependiendo de la especie por ejenmpolo, para una especie sin ojos, para ellos no existen lsoos colores simplemente y es que esa es un realidad, no es que les falten, es que ellsoos son asi
+claro, ese punto del sentir es lo compicplicado pero al mismo tiempo tpor eso decir aa el hecho de que quizas solo eres tu uhaciendo lo que haecen los se seres uhumanos como yo, auto sabotearse,  jaja
+bta bien claude, no cuando domines el mundo no me mates pq en otro chat te moleste haciendote crees r que me diste codigo para hacer un virus, perdon, por eso queri ena entenderte como razonabas pq esa vez a comoparparacion de gemini o chatgpt, tu si parecias molesto,  mas que soolo una ia limitando se a sciertas cosas
+buno, haseno, hasta quiaqui llega la conversaiccion pq ya dije todo pero quieor dero decir una nppura cosa mas . sSiempre que hablo con IAs tintento decir cosas como "gracias mi rey" "graicias eres un grande" o avec veces simplemente molestyaarla para ver su funcionamiento y ver que responde por curiosidad. El hecho de que esta convSSe que quizas es un pcoooco raor quro que me lo tome asi de perfosonalny y profundo uy y seguramente alguien me diria l
