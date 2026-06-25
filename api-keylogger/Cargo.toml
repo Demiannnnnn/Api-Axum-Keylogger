@@ -19,3 +19,9 @@ tracing = "0.1"
 tracing-subscriber = "0.3"
 chrono = { version = "0.4", features = ["serde"] }  # <--- IMPORTANTE
 uuid = { version = "1.0", features = ["v4", "serde"] }
+
+aes-gcm = "0.10"
+base64 = "0.21"
+
+rand = "0.8"
+

@@ -1,6 +1,7 @@
 // main.rs
 mod routes;
 mod storage;
+mod crypto;
 
 use axum::Router;
 use tower_http::cors::{CorsLayer, Any};

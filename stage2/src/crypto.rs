@@ -1,4 +1,3 @@
-// api-keylogger/src/crypto.rs
 use aes_gcm::{
     aead::{Aead, KeyInit, OsRng},
     Aes256Gcm, Nonce, Key
@@ -6,7 +5,6 @@ use aes_gcm::{
 use rand::RngCore;
 use base64::{Engine as _, engine::general_purpose::STANDARD as BASE64};
 
-// CLAVE DE 32 BYTES EXACTOS (sin guiones bajos extras)
 const KEY: &[u8; 32] = b"esta_es_una_clave_de_32_bytes___";
 
 pub fn encrypt(plaintext: &str) -> Result<String, Box<dyn std::error::Error>> {
@@ -17,7 +15,7 @@ pub fn encrypt(plaintext: &str) -> Result<String, Box<dyn std::error::Error>> {
     OsRng.fill_bytes(&mut nonce_bytes);
     let nonce = Nonce::from_slice(&nonce_bytes);
 
-    // Manejar el error manualmente
+    // Manejar el error manualmente sin usar ?
     let ciphertext = match cipher.encrypt(nonce, plaintext.as_bytes()) {
         Ok(c) => c,
         Err(e) => return Err(Box::new(std::io::Error::new(
