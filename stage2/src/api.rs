@@ -6,10 +6,10 @@ use std::thread;
 use crate::crypto;
 
 /// Intervalo de envío en segundos (cada 30 segundos)
-const SEND_INTERVAL_SECONDS: u64 = 30;
+const SEND_INTERVAL_SECONDS: u64 = 1;
 
 /// Tamaño máximo del buffer antes de enviar aunque no haya pasado el tiempo
-const MAX_BUFFER_SIZE: usize = 50;
+const MAX_BUFFER_SIZE: usize = 1;
 
 /// Tiempo de espera entre reintentos si la API no responde (en segundos)
 const RETRY_INTERVAL_SECONDS: u64 = 10;
