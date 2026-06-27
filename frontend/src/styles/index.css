@@ -1,0 +1,88 @@
+/* ===== CSS Reset & Global Styles ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --color-bg-dark: #1a1a1a;
+  --color-bg-navbar: rgba(0, 0, 0, 0.75);
+  --color-green-primary: #3b8526;
+  --color-green-hover: #4ba832;
+  --color-green-btn: #3c8527;
+  --color-green-btn-hover: #4a9e30;
+  --color-wood-light: #c4a26e;
+  --color-wood-dark: #8b6914;
+  --color-wood-border: #6b4f1d;
+  --color-text-white: #ffffff;
+  --color-text-light: #e0e0e0;
+  --color-text-shadow: rgba(0, 0, 0, 0.6);
+  --color-section-bg: #f5f5f5;
+  --color-card-bg: #ffffff;
+  --color-border-light: #e0e0e0;
+  --color-news-title: #2d2d2d;
+
+  /* Typography */
+  --font-pixel: 'Press Start 2P', monospace, cursive;
+  --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --navbar-height: 60px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-green-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-green-hover);
+}

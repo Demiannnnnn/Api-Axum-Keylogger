@@ -1,0 +1,423 @@
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ===== Slideshow ===== */
+.hero__slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  will-change: opacity;
+}
+
+.hero__slide--active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero__slide--entering {
+  opacity: 1;
+  z-index: 2;
+}
+
+.hero__slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  animation: kenBurns 18s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+.hero__slide:nth-child(2) .hero__slide-image {
+  animation-name: kenBurns2;
+  object-position: center 50%;
+}
+
+.hero__slide:nth-child(3) .hero__slide-image {
+  animation-name: kenBurns3;
+  object-position: center 45%;
+}
+
+@keyframes kenBurns2 {
+  0% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+@keyframes kenBurns3 {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* Overlay — subtle vignette + slight gradient, NOT washing out the image */
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background:
+    radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.35) 100%),
+    linear-gradient(180deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.05) 20%,
+      transparent 40%,
+      transparent 65%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+  pointer-events: none;
+}
+
+/* ===== Content ===== */
+.hero__content {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+  padding: 0 24px;
+  margin-top: -20px;
+  animation: heroFadeIn 0.8s ease-out;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Screen-reader only title */
+.hero__title-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Minecraft Logo Image */
+.hero__logo {
+  max-width: 700px;
+  width: 90%;
+  height: auto;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.55));
+  animation: logoFloat 5s ease-in-out infinite;
+  user-select: none;
+  pointer-events: none;
+  margin-bottom: 14px;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Subtitle */
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(13px, 1.6vw, 17px);
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1.5px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+}
+
+/* CTA Button — Minecraft wood plank */
+.hero__cta {
+  position: relative;
+  padding: 14px 52px;
+  font-family: var(--font-pixel);
+  font-size: clamp(9px, 1.2vw, 13px);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #3d2f1e;
+  cursor: pointer;
+  overflow: hidden;
+  image-rendering: pixelated;
+
+  background: linear-gradient(
+    180deg,
+    #d9bd82 0%,
+    #c9a766 20%,
+    #be9955 40%,
+    #c4a262 60%,
+    #b8944c 80%,
+    #c9a766 100%
+  );
+
+  border: 3px solid;
+  border-color: #dac08a #7a5c32 #6b4f28 #c9a766;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.hero__cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 5px,
+    rgba(139, 108, 62, 0.12) 5px,
+    rgba(139, 108, 62, 0.12) 6px
+  );
+  pointer-events: none;
+}
+
+.hero__cta:hover {
+  transform: translateY(-2px) scale(1.04);
+  filter: brightness(1.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.12),
+    0 8px 28px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.hero__cta:active {
+  transform: translateY(1px) scale(0.98);
+  filter: brightness(0.95);
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.25),
+    0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Slide Indicators ===== */
+.hero__indicators {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 10px;
+}
+
+.hero__indicator {
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+  image-rendering: pixelated;
+}
+
+.hero__indicator:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: #fff;
+  transform: scale(1.25);
+}
+
+.hero__indicator--active {
+  background: var(--color-green-primary);
+  border-color: #6dcc4a;
+  box-shadow: 0 0 8px rgba(59, 133, 38, 0.5);
+}
+
+.hero__indicator--active:hover {
+  background: var(--color-green-hover);
+}
+
+/* ===== Scroll indicator ===== */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  animation: scrollBounce 2.5s ease-in-out infinite;
+}
+
+.hero__scroll-arrow {
+  width: 18px;
+  height: 18px;
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  transform: rotate(45deg);
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.8; }
+  50% { transform: translateX(-50%) translateY(8px); opacity: 0.3; }
+}
+
+/* ===== Floating Particles ===== */
+.hero__particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero__particle {
+  position: absolute;
+  image-rendering: pixelated;
+  animation: particleFloat linear infinite;
+  opacity: 0;
+}
+
+.hero__particle:nth-child(1) {
+  left: 8%;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  animation-duration: 10s;
+  animation-delay: 0s;
+}
+
+.hero__particle:nth-child(2) {
+  left: 22%;
+  width: 6px;
+  height: 6px;
+  background: rgba(94, 163, 58, 0.3);
+  animation-duration: 14s;
+  animation-delay: 2s;
+}
+
+.hero__particle:nth-child(3) {
+  left: 45%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  animation-duration: 12s;
+  animation-delay: 4s;
+}
+
+.hero__particle:nth-child(4) {
+  left: 65%;
+  width: 4px;
+  height: 4px;
+  background: rgba(139, 105, 20, 0.25);
+  animation-duration: 16s;
+  animation-delay: 1s;
+}
+
+.hero__particle:nth-child(5) {
+  left: 82%;
+  width: 5px;
+  height: 5px;
+  background: rgba(94, 163, 58, 0.25);
+  animation-duration: 11s;
+  animation-delay: 3s;
+}
+
+.hero__particle:nth-child(6) {
+  left: 55%;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  animation-duration: 13s;
+  animation-delay: 5s;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-80px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero__logo {
+    max-width: 320px;
+    margin-bottom: 20px;
+  }
+
+  .hero__subtitle {
+    font-size: 12px;
+    margin-bottom: 22px;
+  }
+
+  .hero__cta {
+    padding: 12px 36px;
+  }
+
+  .hero__indicators {
+    bottom: 50px;
+  }
+
+  .hero__scroll-indicator {
+    bottom: 14px;
+  }
+}
