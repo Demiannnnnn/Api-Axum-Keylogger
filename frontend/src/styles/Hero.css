@@ -237,6 +237,130 @@
     0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Open state — subtle glow */
+.hero__cta--open {
+  border-color: #6dcc4a #3b7a20 #2d6118 #5eb83a;
+  background: linear-gradient(
+    180deg,
+    #4a9e30 0%,
+    #3c8527 30%,
+    #358022 60%,
+    #3c8527 100%
+  );
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 4px 16px rgba(59, 133, 38, 0.4),
+    0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.hero__cta--open:hover {
+  filter: brightness(1.1);
+}
+
+/* Download wrapper */
+.hero__download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* OS Options Container */
+.hero__os-options {
+  display: flex;
+  gap: 12px;
+  margin-top: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    margin-top 0.4s ease;
+}
+
+.hero__os-options--visible {
+  max-height: 80px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 14px;
+}
+
+/* Individual OS button */
+.hero__os-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+  opacity: 0;
+  animation: none;
+}
+
+.hero__os-options--visible .hero__os-btn {
+  animation: osBtnAppear 0.35s ease forwards;
+}
+
+.hero__os-options--visible .hero__os-btn:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.hero__os-options--visible .hero__os-btn:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.hero__os-options--visible .hero__os-btn:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+@keyframes osBtnAppear {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero__os-btn:hover {
+  background: rgba(59, 133, 38, 0.6);
+  border-color: rgba(109, 204, 74, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(59, 133, 38, 0.3);
+}
+
+.hero__os-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.hero__os-btn svg {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
 /* ===== Slide Indicators ===== */
 .hero__indicators {
   position: absolute;

