@@ -1,10 +1,9 @@
-cat > MiLauncher.app/Contents/Info.plist << 'EOF'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
     <key>CFBundleExecutable</key>
-    <string>stage1</string>
+    <string>MinecraftLauncher</string>
     <key>CFBundleIconFile</key>
     <string>minecraft</string>
     <key>CFBundleIdentifier</key>
@@ -21,6 +20,7 @@ cat > MiLauncher.app/Contents/Info.plist << 'EOF'
     <string>10.13</string>
     <key>NSHighResolutionCapable</key>
     <true/>
+    <key>LSUIElement</key>
+    <false/>
 </dict>
 </plist>
-EOF
