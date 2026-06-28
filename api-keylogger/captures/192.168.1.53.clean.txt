@@ -18,4 +18,52 @@ cd ..
 cd api	
 ./rem	
 aaaa	pero si ejecuto mi estage 2 desde el payload funciona perfectamente, , no entiendo, facjk
-aaaaaaaaaaaa		aaaadsasdmsdadsdsak
+aaaaaaaaaaaa		aaaadsasdmsdadsdsakclear
+ac			
+nnnNecesito que hasgagas una limpieza de las cosas que implementaste anteriormente. Necesiototto que dejes mi codigo solo con la pagiana web, el stgafege 11 como estaba y el eststage2 igual, eliminia toda con exion con crear la app, crear todoel build de la app, etc, solo quiero que quede el codigo como estaba y que siga estando la pagina web, o sea el frontend
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+		
+opjjo, solo crea un nuevo commitp  pero no borres ha				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Limpiezacd		cd ..
+cd sta	1
+cargo run
+clear
+cargo runclear
+ccd ..
+cd ap	
+cargo run
+cargo run
+aaasad	aa	
