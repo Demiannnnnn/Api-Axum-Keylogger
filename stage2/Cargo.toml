@@ -11,11 +11,9 @@ serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 hostname = "0.3"
 rand = "0.8"
-aes-gcm = "0.10"
+aes = "0.8"
 base64 = "0.21"
-accessibility = "0.1"
-
-
+aes-gcm = "0.10"
 
 [target.'cfg(windows)'.dependencies]
 winreg = "0.50"
