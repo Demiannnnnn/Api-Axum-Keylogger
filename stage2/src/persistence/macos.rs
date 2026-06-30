@@ -1,7 +1,7 @@
 // persistence/macos.rs
-use std::path::PathBuf;
-use std::fs;
 use std::env;
+use std::fs;
+use std::path::PathBuf;
 
 pub fn install_persistence(copias: &[PathBuf]) -> Result<(), Box<dyn std::error::Error>> {
     println!("🍎 Instalando persistencia en macOS...");
@@ -42,7 +42,7 @@ pub fn install_persistence(copias: &[PathBuf]) -> Result<(), Box<dyn std::error:
     <array>
         <string>{}</string>
     </array>
-    <key>RunAtLoad</key>cle
+    <key>RunAtLoad</key>
     <true/>
     <key>KeepAlive</key>
     <true/>

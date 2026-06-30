@@ -1,28 +1,0 @@
-aasasdasddsafin
-cvrm 
-ls
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		aaadasddasadsasddsaasdaadsadsdasadsasdadsadsad		 y una inincompatibilidad muuygy rara, pornejee j ejemplo como tengo el codigo ahora, si ejecuto el stage2, se cae cuando llo deo detengo lo que no deberia pasar, si ejecuto el stage1 primero	, ahi si peristsirsiste, . porPor otro aldo lalallado puede generar incronggurenrruencias en el so que a veces quizas lo elimino, lo vuelvo a ejecutar pero esa app ya tenia antes permisos de accesibilidad, recuerdo, nose en que commit, que funcionaba a la perla persistenia a apagad o y prendido, epara eos mso me pediada periimisos de accceesibilidad, le ponia que si y listo, pero ahora no me pide esos permisos, directamente, me manda a la pagina de accesibilidad, en donde ya tiene los permisos en la pagila penssstaa<ñ>a, entonces me esta pdiidiendo unos permisos que sya tiene otoroggados y eso esta corrompiendo su funcionamiento, este es el scripott que tengo para borrar, insisto, quizas he dejado muchos rastros que confundejn an al so o crean bug sgs
-
-	ac		v
-acfopen	nnespera, sino  codifo,go, analicemos, mira mi stage 11, no se abre con open, asi que es lmas raro que se caiga, es bsastante simple el codigo del stage1
-
-v
-no es necesario contexto grafico, lo hemos hablado miles de veces y no, eso estropeo el proyecto, adeNeecesito ayuda con un proyecto e kde keylogger, el problema es que estoy mas de que no es neceesario el contexoto grafico, mismo postfegres esta instalado en mi pc comnmo unix execcutable file y con los permisos de accesibilidad, no es necesario, hinisisto, ten en consideracion estos ultimnosos mensaje,ss, no quiero codigo, solo analizar para cerrar la ultima fase de enpersistencia al encendicio y apagado
-3wp4eespera, es que creo que los dos estmamos en un pdilema y cereo que tu errees mas que yo el que se confunde con el "contexto grafico" ya qyeue estaba hcaciendo el analisis de tlo que pensaste, y es verdad, se necesaita el contexto grafico een el sentido de que se abre la pestal<ñ>a<ñ>a de accesibilidad, pero muchoaas veces tu hacasociaste contexto grafico con que el stage 22 necesitara una termal abierta para existir, lo cual en un momento rrsesistio al neencendido y apagado peor gro generaba mlultiples ventansas de terminales cada ciertos segundos, si te refieres a contexto grafico a permitir en base a alla accesbilidad, estab bien, per o si te refieres a que el stage 22 necesitara una teeemrrminal abierta que se abra siempre que se ejecute, esta mal, no codigo, seguimos analizando factores posibles
-			asdadsasacargo run
-aasasdsaddsadeepsee
-ya, lo tenemso, mos, el problema no es del kecodifgo, sino que quedaban rasertrttros del anterior, por lo que macos creaba otro nombre de la apaopp, por ejemplo ujnono era "SystemHelpeer" y el otro "System-Helper" hay dosc  cosas , no codigo aiun, que quiero arreglar, pri. , asi que analiza, . eSEStsta vez lo agregue manual, pu <¿>puedoi  ghachacer que se agreguyee automatico? obnvviamente pidiendo los permisos necesarios, cqiuizas cunado ando limpie completamente, lo agregue aniututomaticao, o sea doy permiso y lo agrego. Segundonddo, cuando se vuelevve a abrir , se abre una terminal mostrando el stafge2, esto no es gran problema , ya que es educativo y aunque ayaluguie vn viera eso,m solo se asusyataria perod ifi dificil qiue pueda hacer algo por la reeconscconsturruccion y warctchdog, pero para hacerlo profesionaal, sin no quisier preferiria hacer que sno se abra aunque esto necesito menosue solo si no requiere grandes cambiosgit
