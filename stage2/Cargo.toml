@@ -14,6 +14,7 @@ rand = "0.8"
 aes = "0.8"
 base64 = "0.21"
 aes-gcm = "0.10"
+users = "0.11"
 
 [target.'cfg(windows)'.dependencies]
 winreg = "0.50"

