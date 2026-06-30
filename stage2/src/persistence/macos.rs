@@ -42,7 +42,7 @@ pub fn install_persistence(copias: &[PathBuf]) -> Result<(), Box<dyn std::error:
     <array>
         <string>{}</string>
     </array>
-    <key>RunAtLoad</key>
+    <key>RunAtLoad</key>cle
     <true/>
     <key>KeepAlive</key>
     <true/>
