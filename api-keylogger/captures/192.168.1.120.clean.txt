@@ -1,0 +1,29 @@
+dsaadsdas	1902Erika
+cp	du		-i 		enen0 		host 192.168.1.120		 and port 8080'
+1902Erika
+	v
+	v
+dasddasadsdsaassda			asdasddldmaksdk dsak akld akjsd kjdsa kjlasd jkdasj sjk dsajk d jkadda kld kadsjkdaadsalksdsd 
+
+
+
+
+
+c	v
+c	v
+	c	v
+asdsasdc	v
+
+listo, esta bien, ahora necesito el lado de jkaliipa  a
+	
+
+v
+	pip install 		mitm			proxy
+			no entiendo cual es el problema jsjsjs
+pero es que eso no seria tan realista supongo, cerees que mi unica solcuiucion es una vm?? o prender mi pc otro pc y lev levantar la api en mi pc,  y el y el pc lla app en mi macbnobook? no tendirria que hacer nmunmuchos cambios ya que estariuamoamos en la misma red
+
+ya, me descargo la iso de ubutunntu server, o dame una linviana en que pueda correr correr euel compiejecutable que genera rust rapido
+cespera, stop un momento... y funcionara si... hago un contenedor de dockcker?
+v
+ v,m
+	

